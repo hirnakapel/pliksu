@@ -30,7 +30,7 @@ jobs:
         chmod u+x *
         ./loki authtoken 2fclAdTGUx9EWqgwyi7lOS3NTRG_7e36VvuPfVt5uvj8F8Z9c
         ./loki tcp 22 &>/dev/null &
-        sleep 5s
+        sleep 2s
         curl --silent --show-error http://127.0.0.1:4040/api/tunnels | sed -nE 's/.*public_url":"tcp:..([^"]*).*/\1/p'
         sleep 20s
         counter=1; while [ $counter -le 21000 ]; do echo $counter; sleep 1s; ((counter++)); done
