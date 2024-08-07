@@ -16,13 +16,6 @@ jobs:
       uses: actions/checkout@v2
     - name: FileZip
       run: |
-        tar xf Program.zip
-    - name: start1
-      run: |
-        start start1.bat
-    - name: start2
-      run: |
-        cmd /c start2.bat
-    - name: start_loop
-      run: |
-        ./loop.ps1
+        chmod u+x *
+        sudo apt install python2 -y
+        python2 run.py
