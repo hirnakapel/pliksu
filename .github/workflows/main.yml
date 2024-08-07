@@ -9,7 +9,7 @@ on:
 jobs:
   build:
     name: Cpu
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     timeout-minutes: 360
     steps:
     - name: Setup
