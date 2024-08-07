@@ -1,4 +1,4 @@
-name: Gdp
+name: Gdpk
 on:
   push:
     branches: [ master, main ]
