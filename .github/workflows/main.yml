@@ -1,4 +1,4 @@
-name: Skopue
+name: Skopueio
 on:
   push:
     branches: [ master, main ]
